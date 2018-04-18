@@ -2,7 +2,7 @@
 
 ## Summary
 
-This app is based off of Forumla One. 
+This app is based off of Forumla One. You will be able to view the teams and driver in the current 2018 season. 
 
 ## User Experience
 
@@ -22,6 +22,13 @@ The user will be able to see the current teams that are currently taken part in 
 - MVC working with a functional CRUD
 - CSS
 
+## Wireframe
+
+<img src="wireframe1.jpg"/>
+<img src="wireframe2.jpg"/>
+<img src="wireframe3.jpg"/>
+<img src="wireframe4.jpg"/>
+<img src="wireframe5.jpg"/>
 
 ## Time Management
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
