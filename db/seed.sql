@@ -1,0 +1,21 @@
+-- TEST DATABASE
+\c formula_test_db
+
+CREATE TABLE team (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  base VARCHAR(255) NOT NULL,
+  image VARCHAR(400),
+);
+
+-- INSERT INTO VALUE
+
+CREATE TABLE driver (
+  id SERIAL PRIMARY KEY,
+  fname VARCHAR(255) NOT NULL,
+  lname VARCHAR(255) NOT NULL,
+  img_url VARCHAR(400),
+  team_id INT REFERENCE team(id)
+);
+
+-- INSERT INTO VALUE
