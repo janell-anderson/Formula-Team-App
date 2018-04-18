@@ -2,7 +2,7 @@
 
 ## Summary
 
-This app is based off of Forumla One. You will be able to view the teams and driver in the current 2018 season. 
+This app is based off of Forumla One. You will be able to view the teams and driver in the current 2018 season. You can create, delete or edit a dream team. You choose the team you like and any driver. 
 
 ## User Experience
 
@@ -36,6 +36,6 @@ The user will be able to see the current teams that are currently taken part in 
 | Structure Setup | L | 30 mins| 30 mins | N/A |
 | MVC | H | 6 hrs| 6 hrs | N/A |
 | CRUD functionality | H | 4 hrs| 4hrs | N/A |
-| Total |  | 10 1/2 hrs| 10 1/2 hrs | 23hrs |
+| Total |  | 10 1/2 hrs| 10 1/2 hrs | N/A |
 
 
