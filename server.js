@@ -3,6 +3,7 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
+const methodOverride = require('method-override');
 
 // importing express.js
 const app = express();
@@ -19,6 +20,7 @@ const driverRouter = require('./routes/driverRouteR');
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
+app.use(methodOverride('_method'));
 
 // calling ejs views
 app.set('view engine', 'ejs');
@@ -31,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // });
 
 app.get('/', (req, res) => {
-  res.send('I Am connected!');
+  res.render('home/index');
 });
 
 // app.get('/nation', (req, res) => {

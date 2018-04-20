@@ -1,3 +1,5 @@
+<% include ../../partials/boilerplate %>
+
 <h1><%= nation.name%></h1>
 
 <% driver.forEach((drivers) => { %>
@@ -6,6 +8,9 @@
     <p><%=driver.carxnum%>
     </p>
 <% }) %>
+
+<% include ../../partials/end %>
+
 
 
 

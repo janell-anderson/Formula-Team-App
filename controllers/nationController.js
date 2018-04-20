@@ -1,5 +1,5 @@
 const nationdb = require('../models/nation');
-// rt
+
 
 // REMEMBER: some function names will have 's'
 function getAllNations(req, res, next) {

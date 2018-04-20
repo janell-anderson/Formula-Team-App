@@ -14,16 +14,31 @@ function sendOneDriver(req, res) {
 
 // create a driver
 function sendCreateDriver(req, res) {
-  console.log('created successfully')
-  res.json({
-    status: 'created',
-    driver: res.locals.driver
+  driver = res.locals.driver
+  res.redirect(`driver/${driver.id}`);
+}
+
+function sendNation(req, res) {
+  res.render('driver/new', {
+    driver: res.locals.newDriver
   })
 }
+
+// function sendUpdateDriver(req, res) {
+//   console.log('successfully updated')
+//   res.json({
+//     status: 'updated',
+//     driver: res.locals.driver
+//   })
+// }
+
+// function deleteDriver(req, res)
 
 
 module.exports = {
   sendDriver: sendDriver,
   sendOneDriver: sendOneDriver,
-  sendCreateDriver: sendCreateDriver
+  sendCreateDriver: sendCreateDriver,
+  // sendUpdateDriver: sendUpdateDriver
+  sendNation: sendNation
 }

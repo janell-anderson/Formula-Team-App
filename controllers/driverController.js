@@ -1,4 +1,5 @@
 const driverdb = require('../models/driver');
+const nationdb = require('../models/nation');
 
 // get all drivers from table
 function getAllDrivers(req, res, next) {
@@ -28,13 +29,25 @@ function getOneDriver(req, res, next) {
   })
 }
 
+// get nations from nation router
+function getNation(req, res, next) {
+  nationdb.getNation()
+  .then(data => {
+    res.locals.nation = data;
+    next();
+  })
+  .catch(err => {
+    next(err);
+  })
+}
+
 // create a driver
 function createOne(req, res, next) {
   console.log(req.body);
   driverdb.createDriver(req.body)
   .then(data => {
     console.log(data);
-    res.locals.driver = data;
+    res.locals.newDriver = data;
     next();
   })
   .catch(err => {
@@ -71,6 +84,7 @@ function destroyOne(req, res, next) {
 module.exports ={
   getAllDrivers: getAllDrivers,
   getOneDriver: getOneDriver,
+  getNation: getNation,
   createOne: createOne,
   updateOne: updateOne,
   destroyOne: destroyOne

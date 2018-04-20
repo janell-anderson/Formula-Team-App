@@ -16,7 +16,11 @@ driverRouter.route('/')
   .get(driverController.getAllDrivers, driverViewController.sendDriver, sendError)
   .post(driverController.createOne, driverViewController.sendCreateDriver)
 
+driverRouter.route('/new')
+  .get(driverController.getNation, driverViewController.sendNation)
+
 driverRouter.route('/:id')
   .get(driverController.getOneDriver, driverViewController.sendOneDriver)
+
 
   module.exports = driverRouter;

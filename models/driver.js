@@ -21,7 +21,7 @@ function createDriver(driver) {
   const driverPromise = db.one(`
     INSERT INTO driver
     (carnum, name, nationality, nation_id)
-    VALUES ($/carname/, $/name/, $/nationality/, $/nation_id/)
+    VALUES ($/carnum/, $/name/, $/nationality/, $/nation_id/)
     RETURNING *
     `, driver);
   return driverPromise;
