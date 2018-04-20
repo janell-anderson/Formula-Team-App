@@ -3,63 +3,65 @@
 
 -- drops the table if it already exists which also gives
 -- you back the original data before you added new ones
-DROP TABLE IF EXISTS team CASCADE;
+DROP TABLE IF EXISTS nationality CASCADE;
 DROP TABLE IF EXISTS driver CASCADE;
 
 -- took out images for the mean time
 
-CREATE TABLE team (
+CREATE TABLE nationality (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255) NOT NULL,
-  base VARCHAR(255) NOT NULL
-  -- image VARCHAR(400)
+  name VARCHAR(255)
 );
 
 CREATE TABLE driver (
   id SERIAL PRIMARY KEY,
+  num INTEGER,
   name VARCHAR(255) NOT NULL,
-  num INT,
-  team VARCHAR(255) NOT NULL,
-  -- img_url VARCHAR(400),
-  team_id INT REFERENCES team(id)
+  nationality VARCHAR(255),
+  nationality_id INTEGER REFERENCES nationality(id)
+    -- img_url VARCHAR(400),
 );
 
-INSERT INTO team (name, base)
 
+INSERT INTO nationality (name)
 VALUES
-('Mercedes AMG Petronas Motorsport', 'Brackley, United Kingdom'),
-('Scuderia Ferrai','Maranello, Italy'),
-('Aston Martin Red Bull Racing','Milton Keynes, United Kingdom'),
-('McLaren F1 Team','Woking, United Kingdom'),
-('Renault Sport Formula One Team','Enstone, United Kingdom'),
-('Red Bull Toro Rosso Honda','Faenza, Italy'),
-('Haas F1 Team','N/A'),
-('Alfa Romeo Sauber F1 Team','Hinwil, Switzerland'),
-('Sahara Force India F1 Team','Silverstone, United Kingdom'),
-('Williams Martini Racing','Grove, United Kingdom');
+('Australia'),
+('Belgium'),
+('Britian'),
+('Canada'),
+('Denmark'),
+('Finland'),
+('France'),
+('Germany'),
+('Mexico'),
+('Monaco'),
+('Netherlands'),
+('New Zealand'),
+('Russia'),
+('Spain'),
+('Sweden');
 
 
-INSERT INTO driver (name, num, team, team_id)
 
+INSERT INTO driver (num, name, nationality, nationality_id)
 VALUES
-('Lewis Hamilton', '44', 'Mercedes', 1),
-('Valtteri Bottas', '77', 'Mercedes', 1),
-('Sebastian Vettel', '5', 'Ferrari', '2'),
-('Kimi Raikkonen', '7', 'Ferrari', '2'),
-('Daniel Ricciardo', '3', 'Red Bull Racing', '3'),
-('Max Verstappen', '33', 'Red Bull Racing', '3'),
-('Fernando Alonso', '14', 'McLaren', '4'),
-('Stoffel Vandoorne', '2', 'McLaren', '4'),
-('Nico Hulkenburg', '27', 'Renault', '5'),
-('Carlos Sainz', '55', 'Renault', '5'),
-('Pierre Gasly', '10', 'Toro Rosso', '6'),
-('Brendon Hartley', '28', 'Toro Rosso', '6'),
-('Romain Grosjean', '8', 'Haas', '7'),
-('Kevin Magnussen', '20', 'Haas', '7'),
-('Marcus Ericsson', '9', 'Sauber', '8'),
-('Charles Leclerc', '16', 'Sauber', '8'),
-('Sergio Perez', '11', 'Force India', '9'),
-('Esteban Ocon', '31', 'Force India', '9'),
-('Lance Stroll', '18', 'Williams', '10'),
-('Sergey Sirotkin', '35', 'Williams', '10');
-
+(44,'Lewis Hamilton','Britian', 2),
+(77, 'Valtteri Bottas','Finland', 6),
+(5, 'Sebastian Vettel', 'Germany', 8),
+(7, 'Kimi Raikkonen', 'Findland', 6),
+(3,'Daniel Ricciardo', 'Australia', 1),
+(33,'Max Verstappen', 'Netherlands', 11),
+(14,'Fernando Alonso', 'Spain', 14),
+(2,'Stoffel Vandoorne', 'Belgium', 2),
+(27, 'Nico Hulkenburg', 'Germany', 8),
+(55, 'Carlos Sainz', 'Spain', 14),
+(10, 'Pierre Gasly', 'France', 7),
+(28, 'Brendon Hartley', 'New Zealand', 12),
+(8, 'Romain Grosjean', 'France', 7),
+(20, 'Kevin Magnussen', 'Denmark', 5),
+(9, 'Marcus Ericsson', 'Sweden', 15),
+(16, 'Charles Leclerc', 'Monaco', 10),
+(11, 'Sergio Perez', 'Mexico', 9),
+(31, 'Esteban Ocon', 'France', 7),
+(18, 'Lance Stroll', 'Canada', 4),
+(35, 'Sergey Sirotkin', 'Russia', 13);
