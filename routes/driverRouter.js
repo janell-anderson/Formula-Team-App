@@ -14,13 +14,16 @@ function sendError(err, req, res, next) {
 
 driverRouter.route('/')
   .get(driverController.getAllDrivers, driverViewController.sendDriver, sendError)
-  .post(driverController.createOne, driverViewController.sendCreateDriver)
+  .post(driverController.createOne, driverViewController.createdDriver)
 
-driverRouter.route('/new')
-  .get(driverController.getNation, driverViewController.sendNation)
+// driverRouter.route('/new')
 
 driverRouter.route('/:id')
   .get(driverController.getOneDriver, driverViewController.sendOneDriver)
+  .put(driverController.updateOne, driverViewController.sendUpdateDriver)
+  .delete(driverController.destroyOne, driverViewController.sendDeleteDriver)
+
+
 
 
   module.exports = driverRouter;

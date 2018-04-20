@@ -30,16 +30,16 @@ function getOneDriver(req, res, next) {
 }
 
 // get nations from nation router
-function getNation(req, res, next) {
-  nationdb.getNation()
-  .then(data => {
-    res.locals.nation = data;
-    next();
-  })
-  .catch(err => {
-    next(err);
-  })
-}
+// function getOneNation(req, res, next) {
+//   nationdb.getOneNation(req.params.id)
+//   .then(data => {
+//     res.locals.nation = data;
+//     next();
+//   })
+//   .catch(err => {
+//     next(err);
+//   })
+// }
 
 // create a driver
 function createOne(req, res, next) {
@@ -47,7 +47,7 @@ function createOne(req, res, next) {
   driverdb.createDriver(req.body)
   .then(data => {
     console.log(data);
-    res.locals.newDriver = data;
+    res.locals.driver = data;
     next();
   })
   .catch(err => {
@@ -84,7 +84,6 @@ function destroyOne(req, res, next) {
 module.exports ={
   getAllDrivers: getAllDrivers,
   getOneDriver: getOneDriver,
-  getNation: getNation,
   createOne: createOne,
   updateOne: updateOne,
   destroyOne: destroyOne

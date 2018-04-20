@@ -20,8 +20,8 @@ function getOneDriver(id) {
 function createDriver(driver) {
   const driverPromise = db.one(`
     INSERT INTO driver
-    (carnum, name, nationality, nation_id)
-    VALUES ($/carnum/, $/name/, $/nationality/, $/nation_id/)
+    (carnum, name, nationality)
+    VALUES ($/carnum/, $/name/, $/nationality/)
     RETURNING *
     `, driver);
   return driverPromise;
@@ -30,7 +30,7 @@ function createDriver(driver) {
 function updateDriver(driver) {
   const driverPromise = db.one(`
     UPDATE driver
-    SET carnum = $/carnum/, name = $/name/, nationality = $/nationality/, nation_id = $/nation_id/
+    SET carnum = $/carnum/, name = $/name/, nationality = $/nationality/
     WHERE id = $/id/
     RETURNING *
     `, driver);
