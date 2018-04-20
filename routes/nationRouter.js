@@ -19,7 +19,7 @@ nationRouter.route('/')
   .get(nationController.getAllNations, nationViewController.sendNations, sendError)
 
 nationRouter.route('/:id')
-  .get(nationController.getOneNation, nationController.getDriverNation, nationViewController.sendDriverNation)
+  .get(nationController.getNation, nationController.getDriverNation, nationViewController.sendDriverNation)
 
 
 module.exports = nationRouter;

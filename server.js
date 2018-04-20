@@ -26,13 +26,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // rendering of views pages will be
-app.get('/', (req, res) => {
-  res.render('/index');
-});
-
 // app.get('/', (req, res) => {
-//   res.send('I Am connected!');
+//   res.render('/index');
 // });
+
+app.get('/', (req, res) => {
+  res.send('I Am connected!');
+});
 
 // app.get('/nation', (req, res) => {
 //   res.send('nation/index');

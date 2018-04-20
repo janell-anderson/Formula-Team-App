@@ -14,8 +14,9 @@ function sendError(err, req, res, next) {
 
 driverRouter.route('/')
   .get(driverController.getAllDrivers, driverViewController.sendDriver, sendError)
+  .post(driverController.createOne, driverViewController.sendCreateDriver)
 
 driverRouter.route('/:id')
-  .get(driverController.getOneDriver, driverViewController.sendOneDriver, sendError)
+  .get(driverController.getOneDriver, driverViewController.sendOneDriver)
 
   module.exports = driverRouter;

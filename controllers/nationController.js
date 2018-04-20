@@ -1,5 +1,5 @@
 const nationdb = require('../models/nation');
-// const nationController = {};
+// rt
 
 // REMEMBER: some function names will have 's'
 function getAllNations(req, res, next) {
@@ -15,7 +15,7 @@ function getAllNations(req, res, next) {
   })
 }
 
-function getOneNation(req, res, next) {
+function getNation(req, res, next) {
   console.log('got one');
   nationdb.getOneNation(req.params.id)
   .then(data => {
@@ -30,10 +30,10 @@ function getOneNation(req, res, next) {
 
 function getDriverNation(req, res, next) {
   console.log('got it');
-  nationdb.getDriverNation()
+  nationdb.getDriverNation(req.params.id)
   .then(data => {
     console.log(data);
-    res.locals.nation = data;
+    res.locals.driver = data;
     next();
   })
   .catch(err => {
@@ -43,6 +43,6 @@ function getDriverNation(req, res, next) {
 
 module.exports = {
   getAllNations: getAllNations,
-  getOneNation: getOneNation,
+  getNation: getNation,
   getDriverNation: getDriverNation
 }

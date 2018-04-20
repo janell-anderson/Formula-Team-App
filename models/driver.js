@@ -17,7 +17,38 @@ function getOneDriver(id) {
   return driverPromise;
 }
 
+function createDriver(driver) {
+  const driverPromise = db.one(`
+    INSERT INTO driver
+    (carnum, name, nationality, nation_id)
+    VALUES ($/carname/, $/name/, $/nationality/, $/nation_id/)
+    RETURNING *
+    `, driver);
+  return driverPromise;
+}
+
+function updateDriver(driver) {
+  const driverPromise = db.one(`
+    UPDATE driver
+    SET carnum = $/carnum/, name = $/name/, nationality = $/nationality/, nation_id = $/nation_id/
+    WHERE id = $/id/
+    RETURNING *
+    `, driver);
+  return driverPromise;
+}
+
+function deleteDriver(id) {
+  const driverPromise = db.none(`
+    DELETE FROM driver
+    WHERE id = $1
+    `, id);
+  return driverPromise;
+}
+
 module.exports = {
   getAllDrivers,
-  getOneDriver
+  getOneDriver,
+  createDriver,
+  updateDriver,
+  deleteDriver
 }

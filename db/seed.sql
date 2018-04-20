@@ -10,15 +10,15 @@ DROP TABLE IF EXISTS driver CASCADE;
 
 CREATE TABLE nationality (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255)
+  name TEXT
 );
 
 CREATE TABLE driver (
   id SERIAL PRIMARY KEY,
-  num INTEGER,
-  name VARCHAR(255) NOT NULL,
-  nationality VARCHAR(255),
-  nationality_id INTEGER REFERENCES nationality(id)
+  carnum INTEGER,
+  name TEXT ,
+  nationality TEXT,
+  nation_id INTEGER REFERENCES nationality(id)
     -- img_url VARCHAR(400),
 );
 
@@ -43,12 +43,12 @@ VALUES
 
 
 
-INSERT INTO driver (num, name, nationality, nationality_id)
+INSERT INTO driver (carnum, name, nationality, nation_id)
 VALUES
 (44,'Lewis Hamilton','Britian', 2),
 (77, 'Valtteri Bottas','Finland', 6),
 (5, 'Sebastian Vettel', 'Germany', 8),
-(7, 'Kimi Raikkonen', 'Findland', 6),
+(7, 'Kimi Raikkonen', 'Finland', 6),
 (3,'Daniel Ricciardo', 'Australia', 1),
 (33,'Max Verstappen', 'Netherlands', 11),
 (14,'Fernando Alonso', 'Spain', 14),
