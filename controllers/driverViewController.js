@@ -12,17 +12,18 @@ function sendOneDriver(req, res) {
   })
 }
 
-function createdDriver(req, res) {
-  res.render('driver/show', {
+// creating a driver
+function sendcreatedDriver(req, res) {
+  res.render('driver/new', {
     driver: res.locals.driver
   })
 }
 
 // new create a driver
-// function sendCreateDriver(req, res) {
-//   driver = res.locals.driver
-//   res.redirect(`driver/${driver.id}`);
-// }
+function redirectCreateDriver(req, res) {
+console.log('redirecting to /driver/' + res.locals.driver.driver_id);
+  res.redirect(`/driver/${res.locals.driver.driver_id}`)
+}
 
 // function sendNation(req, res) {
 //   res.render('driver/new', {
@@ -30,10 +31,12 @@ function createdDriver(req, res) {
 //   })
 // }
 
+function sendNewDriver(req, res) {
+  res.render('driver/new');
+}
+
 function sendUpdateDriver(req, res) {
-  console.log('successfully updated')
-  res.json({
-    status: 'updated',
+  res.render('driver/update', {
     driver: res.locals.driver
   })
 }
@@ -50,7 +53,8 @@ function sendDeleteDriver(req, res) {
 module.exports = {
   sendDriver: sendDriver,
   sendOneDriver: sendOneDriver,
-  createdDriver: createdDriver,
+  sendcreatedDriver: sendcreatedDriver,
+  redirectCreateDriver:redirectCreateDriver,
   sendUpdateDriver: sendUpdateDriver,
   sendDeleteDriver: sendDeleteDriver
 }

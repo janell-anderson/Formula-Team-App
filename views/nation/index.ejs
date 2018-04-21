@@ -1,9 +1,12 @@
 <% include ../../partials/boilerplate %>
 
+<div class="container">
+  <div class="nation-index">
 
 <% nation.forEach((nation) => { %>
-    <h1><%=nation.name%></h1>
+          <a href="/nation/<%=nation.id%>"><h1><%=nation.name%></h1></a>
 <% }) %>
 
-
+   </div>
+</div>
 <% include ../../partials/end %>

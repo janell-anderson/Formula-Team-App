@@ -24,7 +24,8 @@ function getOneNation(id) {
 function getDriverNation(id) {
   const nationPromise = db.any(`
     SELECT * FROM driver
-    JOIN nationality ON nationality.id = driver.nation_id
+    JOIN nationality
+    ON nationality.id = driver.nation_id
     WHERE driver.nation_id = $1
     `, id);
   return nationPromise;

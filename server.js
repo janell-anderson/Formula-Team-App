@@ -36,9 +36,14 @@ app.get('/', (req, res) => {
   res.render('home/index');
 });
 
-// app.get('/nation', (req, res) => {
-//   res.send('nation/index');
-// });
+app.get('/', (req, res) => {
+  res.render('nation/index');
+});
+
+app.get('/', (req, res) => {
+  res.render('driver/index');
+});
+
 
 // calling the use of routers with there specific path will be here
 app.use('/nation', nationRouter);
