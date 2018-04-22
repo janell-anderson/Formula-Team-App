@@ -1,5 +1,4 @@
 const driverdb = require('../models/driver');
-const nationdb = require('../models/nation');
 
 // get all drivers from table
 function getAllDrivers(req, res, next) {

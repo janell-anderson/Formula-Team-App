@@ -1,7 +1,7 @@
 <% include ../../partials/boilerplate %>
 
-<form class="" action="/driver" method="post">
-Create your own driver profile!
+<form class="from-driver" action="/driver" method="post">
+<h1>Create your own driver profile!</h1>
 <label for="name">Name: </label>
 <input type="text" id="name" name="name" placeholder="Enter your full name"/>
 
@@ -11,7 +11,9 @@ Create your own driver profile!
 <label for="nationality">Nationality:</label>
 <input type="" id="nationality" name="nationality" placeholder="What is nationality"/>
 
-<input type="submit" value="Add Driver" />
-<form>
+<div class="add-driver">
+<button type="submit">Submit</button>
+</div>
+</form>
 
 <% include ../../partials/end %>

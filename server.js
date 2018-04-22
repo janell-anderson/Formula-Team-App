@@ -14,7 +14,7 @@ const PORT = 3000;
 
 // will be calling the Router here
 const nationRouter = require('./routes/nationRouter');
-const driverRouter = require('./routes/driverRouteR');
+const driverRouter = require('./routes/driverRouter');
 
 // logger and body-parser will be imported here
 app.use(logger('dev'));
@@ -36,13 +36,13 @@ app.get('/', (req, res) => {
   res.render('home/index');
 });
 
-app.get('/', (req, res) => {
-  res.render('nation/index');
-});
+// app.get('/', (req, res) => {
+//   res.render('nation/index');
+// });
 
-app.get('/', (req, res) => {
-  res.render('driver/index');
-});
+// app.get('/', (req, res) => {
+//   res.render('driver/index');
+// });
 
 
 // calling the use of routers with there specific path will be here

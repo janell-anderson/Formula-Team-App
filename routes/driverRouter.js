@@ -29,11 +29,13 @@ driverRouter.route('/')
   .get(driverController.getAllDrivers, driverViewController.sendDriver, sendError)
   .post(driverController.createOne, driverViewController.redirectCreateDriver)
 
-driverRouter.route('/new', driverViewController.sendNewDriver)
+driverRouter.get('/new', driverViewController.sendNewDriver)
 
 driverRouter.route('/:id')
   .get(driverController.getOneDriver, driverViewController.sendOneDriver)
   .put(driverController.updateOne, driverViewController.sendUpdateDriver)
   .delete(driverController.destroyOne, driverViewController.sendDeleteDriver)
+
+driverRouter.route('/:id/update', driverController.getOneDriver, driverViewController.sendUpdateDriver);
 
   module.exports = driverRouter;

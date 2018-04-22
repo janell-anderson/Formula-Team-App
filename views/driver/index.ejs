@@ -1,9 +1,15 @@
 <% include ../../partials/boilerplate %>
 
+<div class="container">
+  <div class="nation-index">
+
 <% driver.forEach((driver) => { %>
       <a href="/driver/<%=driver.id%>"><h1><%=driver.name%></h1></a>
 
 <% }) %>
+
+  </div>
+</div>
 
 <% include ../../partials/end %>
 

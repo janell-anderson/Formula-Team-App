@@ -14,9 +14,10 @@ function sendOneDriver(req, res) {
 
 // creating a driver
 function sendcreatedDriver(req, res) {
-  res.render('driver/new', {
-    driver: res.locals.driver
-  })
+  res.json({
+    status: 'ok',
+    driver: res.locals.new
+  });
 }
 
 // new create a driver
@@ -32,7 +33,9 @@ console.log('redirecting to /driver/' + res.locals.driver.driver_id);
 // }
 
 function sendNewDriver(req, res) {
-  res.render('driver/new');
+  res.render('driver/new', {
+    driver: res.locals.driver
+  })
 }
 
 function sendUpdateDriver(req, res) {
@@ -55,6 +58,7 @@ module.exports = {
   sendOneDriver: sendOneDriver,
   sendcreatedDriver: sendcreatedDriver,
   redirectCreateDriver:redirectCreateDriver,
+  sendNewDriver: sendNewDriver,
   sendUpdateDriver: sendUpdateDriver,
   sendDeleteDriver: sendDeleteDriver
 }
