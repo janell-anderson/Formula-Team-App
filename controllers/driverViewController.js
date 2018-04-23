@@ -20,11 +20,16 @@ function sendcreatedDriver(req, res) {
   });
 }
 
-// new create a driver
+// take created driver back to driver index
 function redirectCreateDriver(req, res) {
 console.log('redirecting to /driver/' + res.locals.driver.driver_id);
-  res.redirect(`/driver/${res.locals.driver.driver_id}`)
+  res.redirect(`driver/${res.locals.driver.driver_id}`)
 }
+
+// function redirectDriverIndex(req, res) {
+//   console.log('redirecting to /driver');
+//   res.redirect('/driver')
+// }
 
 // function sendNation(req, res) {
 //   res.render('driver/new', {
@@ -58,6 +63,7 @@ module.exports = {
   sendOneDriver: sendOneDriver,
   sendcreatedDriver: sendcreatedDriver,
   redirectCreateDriver:redirectCreateDriver,
+  // redirectDriverIndex: redirectDriverIndex,
   sendNewDriver: sendNewDriver,
   sendUpdateDriver: sendUpdateDriver,
   sendDeleteDriver: sendDeleteDriver

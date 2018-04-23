@@ -35,7 +35,7 @@ The user will be able to see the current teams that are currently taken part in 
 | --- | :---: |  :---: | :---: | :---: |
 | Structure Setup | L | 30 mins| 30 mins | N/A |
 | MVC | H | 6 hrs| 6 hrs | N/A |
-| CRUD functionality | H | 4 hrs| 4hrs | N/A |
-| Total |  | 10 1/2 hrs| 10 1/2 hrs | N/A |
+| CRUD functionality | H | 24 hrs| 24hrs | N/A |
+| Total |  | 30 1/2 hrs| 30 1/2 hrs | N/A |
 
 

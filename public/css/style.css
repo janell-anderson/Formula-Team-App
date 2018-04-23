@@ -64,7 +64,15 @@ h2 {
 
 }
 
-/* driver index*/
+/* driver profile*/
+.profile {
+  width: 100%;
+  max-width: 320px;
+/*  display: flex;
+  flex-flow: column wrap;*/
+  margin: auto;
+}
+
 /* form design */
 form.form-driver {
   display: flex;
@@ -79,4 +87,12 @@ form.form-driver {
 form.add-driver button {
   display: block;
   margin: 25px auto;
+}
+
+p {
+  font-size: 23px;
+}
+
+.intro {
+  font-size: 15px;
 }
