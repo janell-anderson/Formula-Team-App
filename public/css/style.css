@@ -50,9 +50,8 @@ h2 {
 /*home container*/
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 100px;
+  max-width: 1400px;
 }
 
 /* nation-index */
@@ -62,17 +61,27 @@ h2 {
   display: flex;
   flex-flow: column wrap;*/
 
-max-width:  500px;
-margin: 40px auto 0 auto;
+/*max-width:  1400px;
+margin: 30px auto 0 auto;
 display: flex;
-
+flex-flow: column wrap;*/
+   display: flex;
+   align-content: flex-start;
+   flex-wrap: column wrap;
+   flex: 1;
 }
 
 .nation {
   padding: 20px;
   margin-bottom: 20px;
   flex: 1;
-  margin-right: 40px;
+}
+
+.index {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
 }
 
 /* driver profile*/

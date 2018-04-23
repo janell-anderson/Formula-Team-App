@@ -14,7 +14,7 @@ function sendError(err, req, res, next) {
 
 function updated(req, res, next) {
   req.body.driver_id = req.params.id;
-  quoteDb.updateOne(req.body)
+  driverdb.updateOne(req.body)
  .then(data => {
    console.log(data);
    res.locals.driver = data;
@@ -27,13 +27,13 @@ function updated(req, res, next) {
 
 driverRouter.route('/')
   .get(driverController.getAllDrivers, driverViewController.sendDriver, sendError)
-  .post(driverController.createOne, driverViewController.sendNewDriver)
+  .post(driverController.createOne, driverViewController.redirectCreateDriver, sendError)
 
 driverRouter.get('/new', driverViewController.sendNewDriver)
 
 driverRouter.route('/:id')
-  .get(driverController.getOneDriver, driverViewController.sendOneDriver)
-  .put(driverController.updateOne)
+  .get(driverController.getOneDriver, driverViewController.sendOneDriver, sendError)
+  .put(driverController.updateOne, driverViewController.sendUpdateDriver, sendError )
   .delete(driverController.destroyOne, driverViewController.sendDeleteDriver)
 
 driverRouter.route('/:id/update')

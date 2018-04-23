@@ -83,12 +83,13 @@ function editDriver(req, res) {
 function destroyOne(req, res, next) {
   driverdb.deleteDriver(req.params.id)
   .then(data => {
-    console.log(data);
-    next();
+    res.redirect('/driver');
   })
   .catch(err => {
-    next(err);
-  })
+      res.status(500).json({
+        message:err.message
+      })
+    })
 }
 
 module.exports ={

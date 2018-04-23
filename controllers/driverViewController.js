@@ -21,10 +21,10 @@ function sendcreatedDriver(req, res) {
 }
 
 // take created driver back to driver index
-// function redirectCreateDriver(req, res) {
-// console.log('redirecting to /driver/' + res.locals.driver.driver_id);
-//   res.redirect(`driver/${res.locals.driver.driver_id}`)
-// }
+function redirectCreateDriver(req, res) {
+console.log('redirecting to /driver/' + res.locals.driver);
+  res.redirect(`/driver/${res.locals.driver.id}`)
+}
 
 // function redirectDriverIndex(req, res) {
 //   console.log('redirecting to /driver');
@@ -46,30 +46,31 @@ function sendNewDriver(req, res) {
 function sendEditDriver(req, res) {
   driver = res.locals.driver;
   res.render(`driver/update`, {
-    student: res.locals.student
+    driver: res.locals.driver
   })
 }
 
 function sendUpdateDriver(req, res) {
-  res.render('driver/update', {
-    driver: res.locals.driver
-  })
+  driver: res.locals.driver
+  res.redirect(`driver/${res.locals.driver.id}`);
 }
 
 function sendDeleteDriver(req, res) {
   console.log('It has been deleted')
-  res.json({
-    status: 'deleted',
-    driver: res.locals.driver
-  })
+    res.redirect(`/driver/${res.locals.driver.id}`)
+  // res.json({
+  //   status: 'deleted',
+  //   driver: res.locals.driver
+  // })
 }
 
 
+// exporting all information towards the views
 module.exports = {
   sendDriver: sendDriver,
   sendOneDriver: sendOneDriver,
   sendcreatedDriver: sendcreatedDriver,
-  // redirectCreateDriver:redirectCreateDriver,
+  redirectCreateDriver:redirectCreateDriver,
   // redirectDriverIndex: redirectDriverIndex,
   sendNewDriver: sendNewDriver,
   sendEditDriver: sendEditDriver,
