@@ -1,6 +1,6 @@
 <% include ../../partials/boilerplate %>
 
-<form class="" action="/driver/<%= driver.driver_id %>?_method=PUT" method="post">
+<form class="" action="/driver/<%= driver.driver_id %>?_method=PUT" method="POST">
 Driver Profile id: <%= driver.driver_id %>
 <label for="name">Name: </label>
 <input value="<%= driver.name %>" type="text" id="name" name="name" placeholder="Enter your full name"/>
@@ -11,11 +11,8 @@ Driver Profile id: <%= driver.driver_id %>
 <label for="nationality">Nationality:</label>
 <input value="<%= driver.nationality %>" type="text" id="nationality" name="nationality" placeholder="What is nationality"/>
 
-<input type="submit" value="Add Driver" />
-  <button type="submit">Update</button>
-</form>
-<form action="/driver/<%= driver.driver_id %>?_method=DELETE" method="POST">
-  <button type="submit" name="button">Delete Quote</button>
-</form>
+  <input type="submit" value="Edit Driver" />
+</div>
+<a href="/driver"> Back to Drivers </a>
 
 <% include ../../partials/end %>

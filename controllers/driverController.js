@@ -68,6 +68,17 @@ function updateOne(req, res, next) {
   })
 }
 
+function editDriver(req, res) {
+  driverdb.getOneDriver(req.params.id)
+    .then(data=> {
+      res.locals.driver = data;
+      next();
+    })
+    .catch(err=> {
+      err:err.message
+    })
+}
+
 // delete a driver
 function destroyOne(req, res, next) {
   driverdb.deleteDriver(req.params.id)
@@ -84,6 +95,7 @@ module.exports ={
   getAllDrivers: getAllDrivers,
   getOneDriver: getOneDriver,
   createOne: createOne,
+  editDriver: editDriver,
   updateOne: updateOne,
   destroyOne: destroyOne
 }

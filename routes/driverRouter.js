@@ -27,15 +27,16 @@ function updated(req, res, next) {
 
 driverRouter.route('/')
   .get(driverController.getAllDrivers, driverViewController.sendDriver, sendError)
-  .post(driverController.createOne, driverViewController.redirectCreateDriver)
+  .post(driverController.createOne, driverViewController.sendNewDriver)
 
 driverRouter.get('/new', driverViewController.sendNewDriver)
 
 driverRouter.route('/:id')
   .get(driverController.getOneDriver, driverViewController.sendOneDriver)
-  .put(driverController.updateOne, driverViewController.sendUpdateDriver)
+  .put(driverController.updateOne)
   .delete(driverController.destroyOne, driverViewController.sendDeleteDriver)
 
-driverRouter.route('/:id/update', driverController.getOneDriver, driverViewController.sendUpdateDriver);
+driverRouter.route('/:id/update')
+ .get(driverController.getOneDriver, driverViewController.sendEditDriver)
 
   module.exports = driverRouter;
