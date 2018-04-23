@@ -11,7 +11,7 @@ const app = express();
 
 // calling port 3000
 // may change it to process.env.PORT to call it not only locally but on a hosted server which I believe will be Heroku
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // will be calling the Router here
 const nationRouter = require('./routes/nationRouter');
