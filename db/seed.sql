@@ -1,5 +1,5 @@
 -- TEST DATABASE
-\c formula_test_db
+-- \c formula_test_db
 
 -- drops the table if it already exists which also gives
 -- you back the original data before you added new ones
