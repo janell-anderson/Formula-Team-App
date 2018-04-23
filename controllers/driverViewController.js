@@ -52,7 +52,7 @@ function sendEditDriver(req, res) {
 
 function sendUpdateDriver(req, res) {
   driver: res.locals.driver
-  res.redirect(`driver/${res.locals.driver.id}`);
+  res.redirect(`/driver/${res.locals.driver.id}`);
 }
 
 function sendDeleteDriver(req, res) {

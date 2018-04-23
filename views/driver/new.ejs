@@ -1,22 +1,22 @@
 <% include ../../partials/boilerplate %>
 
-<form class="from-driver" action="/driver" method="post">
+<form class="form-driver" action="/driver" method="post">
 <h1>Create your own driver profile!</h1>
 <label for="name">Name: </label>
 <input type="text" id="name" name="name" placeholder="Enter your full name"/>
 
 <label for="carnum">Car Number: </label>
-<input type="" id="carnum" name="carnum" placeholder="Enter your car number"/>
+<input type="number" id="carnum" name="carnum" placeholder="Enter your car number"/>
 
 <label for="team">Team:</label>
-<input type="" id="team" name="team" placeholder="What team are you on?"/>
+<input type="text" id="team" name="team" placeholder="What team are you on?"/>
 
 <label for="nationality">Nationality:</label>
-<input type="" id="nationality" name="nationality" placeholder="What is nationality"/>
+<input type="text" id="nationality" name="nationality" placeholder="What is nationality"/>
 
 <div class="add-driver">
-<button type="submit">Submit</button>
-<a href="/driver"> Back to Drivers </a>
+<button type="submit">Submit</button><br>
+<button type="submit"><a href="/driver"> Back to Drivers </a></button>
 </div>
 </form>
 

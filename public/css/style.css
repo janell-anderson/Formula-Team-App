@@ -5,8 +5,10 @@ body {
 }
 
 nav {
+  display: flex;
   padding: 15px;
   background-color: #000;
+  justify-content: space-around;
 }
 
 ul {
@@ -48,41 +50,37 @@ h2 {
 
 
 /*home container*/
+
 .container {
-  display: flex;
-  margin-top: 100px;
-  max-width: 1400px;
+
+
+}
+
+.home-page {
+
 }
 
 /* nation-index */
-.nation-index {
-/*  width: 100%;
-  max-width: 320px;
-  display: flex;
-  flex-flow: column wrap;*/
-
-/*max-width:  1400px;
-margin: 30px auto 0 auto;
-display: flex;
-flex-flow: column wrap;*/
-   display: flex;
-   align-content: flex-start;
-   flex-wrap: column wrap;
-   flex: 1;
-}
-
-.nation {
-  padding: 20px;
-  margin-bottom: 20px;
-  flex: 1;
-}
-
 .index {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: inline-block;
+  width: 350px;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+/*  border: 3px solid black;
+  border-radius: 100%;*/
 
 }
+
+.nation a {
+  text-decoration: none;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
 
 /* driver profile*/
 .profile {
@@ -93,21 +91,6 @@ flex-flow: column wrap;*/
   margin: auto;
 }
 
-/* form design */
-form.form-driver {
-  display: flex;
-/*  flex: 1;*/
-  min-height: 100vh;
-/*  flex-direction: column;
-  align-items: center;
-  justify-content: center;*/
-  flex-flow: column wrap;
-}
-
-form.add-driver button {
-  display: block;
-  margin: 25px auto;
-}
 
 p {
   font-size: 23px;
@@ -115,4 +98,45 @@ p {
 
 .intro {
   font-size: 15px;
+}
+
+.form-driver {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 20px;
+justify-content: center;
+}
+
+.form-row {
+  display: flex;
+}
+
+.add-driver button {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.edit-button button {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.form-row input {
+flex: 2;
+}
+
+form label {
+  padding-right: 3px;
+}
+
+form input[type=text], form input[type=number], form input[type=email] {
+  border: 0;
+  border-bottom: 3px solid #eee;
+  font-size: 1.7em;
+  margin: 20px 0;
+  padding: 5px;
+  display: block;
+  width: 30%;
+  transition: 0.3s;
 }

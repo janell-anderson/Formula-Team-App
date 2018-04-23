@@ -3,6 +3,7 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
+const env = require('dotenv').config();
 const methodOverride = require('method-override');
 
 // importing express.js

@@ -1,12 +1,12 @@
 <% include ../../partials/boilerplate %>
 
-<div class="nation-index">
-  <div class="nation">
+<h1>Countries</h1>
+<p>Each driver is apart of these countries</p>
 
 <% nation.forEach((nation) => { %>
+  <div class="index">
           <a href="/nation/<%=nation.id%>"><h1><%=nation.name%></h1></a>
+        </div>
 <% }) %>
 
-   </div>
-</div>
 <% include ../../partials/end %>
